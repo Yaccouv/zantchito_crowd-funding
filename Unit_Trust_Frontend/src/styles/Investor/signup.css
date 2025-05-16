@@ -1,0 +1,57 @@
+/* src/styles/Investor/signup.css */
+.register-form {
+    max-width: 600px;  /* Increased max-width for wider form */
+    width: 100%;  /* Full width of the container */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;  /* Light background color for the form */
+    border-radius: 8px;         /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for form */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;  /* Darker text color for the heading */
+  }
+  
+  .form-field {
+    margin-bottom: 15px;
+  }
+  
+  .form-field input {
+    width: 100%;  /* Full width of the form */
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;  /* Border only at the bottom */
+    font-size: 14px;
+    outline: none;  /* Removes the default outline on focus */
+    transition: border-bottom 0.3s ease;  /* Smooth transition for focus effect */
+  }
+  
+  .form-field input:focus {
+    border-bottom: 2px solid #6a1b9a;  /* Purple underline on focus */
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .submit-button {
+    background-color: #6a1b9a;  /* Purple color */
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;  /* Full width button */
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #9c4dcc;  /* Lighter purple on hover */
+  }
+  

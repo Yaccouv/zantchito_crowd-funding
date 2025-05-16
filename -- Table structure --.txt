@@ -1,0 +1,150 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jan 29, 2025 at 09:36 AM
+-- Server version: 8.2.0
+-- PHP Version: 8.2.13
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `unittrustdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accounts`
+--
+
+DROP TABLE IF EXISTS `accounts`;
+CREATE TABLE IF NOT EXISTS `accounts` (
+  `AccountsId` int NOT NULL AUTO_INCREMENT,
+  `InvestorNumber` int NOT NULL,
+  `AccountNumber` bigint NOT NULL,
+  `Balance` double NOT NULL,
+  PRIMARY KEY (`AccountsId`),
+  KEY `InvestorNumber` (`InvestorNumber`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `investors`
+--
+
+DROP TABLE IF EXISTS `investors`;
+CREATE TABLE IF NOT EXISTS `investors` (
+  `InvestorNumber` int NOT NULL AUTO_INCREMENT,
+  `Firstname` varchar(255) NOT NULL,
+  `Lastname` varchar(255) NOT NULL,
+  `Gender` varchar(20) NOT NULL,
+  `DateOfBirth` date NOT NULL,
+  `Nationality` varchar(100) NOT NULL,
+  `IdNumber` varchar(100) NOT NULL,
+  `Email` varchar(191) NOT NULL,
+  `PhoneNumber` varchar(20) NOT NULL,
+  `City` varchar(100) NOT NULL,
+  `EmploymentStatus` varchar(50) NOT NULL,
+  `AnnualIncome` decimal(15,2) NOT NULL,
+  `SourceOfFunds` varchar(100) NOT NULL,
+  `BankAccountNumber` varchar(50) NOT NULL,
+  `BankBranchCode` varchar(20) NOT NULL,
+  `BankAccountType` varchar(50) NOT NULL,
+  `InvestmentGoals` varchar(255) NOT NULL,
+  `PaymentPlan` varchar(100) NOT NULL,
+  `NextOfKinName` varchar(255) DEFAULT NULL,
+  `NextOfKinRelationship` varchar(100) DEFAULT NULL,
+  `NextOfKinPhone` varchar(20) DEFAULT NULL,
+  `UserId` int NOT NULL,
+  `CreatedAt` datetime DEFAULT CURRENT_TIMESTAMP,
+  `UpdatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Status` varchar(255) NOT NULL,
+  PRIMARY KEY (`InvestorNumber`),
+  KEY `UserId` (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=88287 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `staffs`
+--
+
+DROP TABLE IF EXISTS `staffs`;
+CREATE TABLE IF NOT EXISTS `staffs` (
+  `StaffId` int NOT NULL AUTO_INCREMENT,
+  `FirstName` varchar(100) NOT NULL,
+  `LastName` varchar(100) NOT NULL,
+  `Gender` varchar(10) NOT NULL,
+  `DateOfBirth` date NOT NULL,
+  `Address` varchar(255) NOT NULL,
+  `PhoneNumber` varchar(15) NOT NULL,
+  `EmailAddress` varchar(255) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `JobTitle` varchar(100) NOT NULL,
+  `Department` varchar(100) NOT NULL,
+  `Role` varchar(255) NOT NULL,
+  PRIMARY KEY (`StaffId`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `transactions`
+--
+
+DROP TABLE IF EXISTS `transactions`;
+CREATE TABLE IF NOT EXISTS `transactions` (
+  `TransactionID` int NOT NULL AUTO_INCREMENT,
+  `AccountsId` int NOT NULL,
+  `TransactionType` varchar(50) NOT NULL,
+  `TransactionDate` datetime NOT NULL,
+  `Amount` decimal(18,2) NOT NULL,
+  `Status` varchar(50) DEFAULT 'Pending',
+  `CreatedAt` datetime DEFAULT CURRENT_TIMESTAMP,
+  `UpdatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`TransactionID`),
+  KEY `AccountsId` (`AccountsId`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `UserId` int NOT NULL AUTO_INCREMENT,
+  `PasswordHash` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `Firstname` varchar(255) NOT NULL,
+  `Lastname` varchar(255) NOT NULL,
+  `Role` varchar(50) NOT NULL DEFAULT 'Investor',
+  PRIMARY KEY (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Constraints for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD CONSTRAINT `accounts_ibfk_1` FOREIGN KEY (`InvestorNumber`) REFERENCES `investors` (`InvestorNumber`);
+
+--
+-- Constraints for table `investors`
+--
+ALTER TABLE `investors`
+  ADD CONSTRAINT `investors_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `users` (`UserId`);
+
+--
+-- Constraints for table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`AccountsId`) REFERENCES `accounts` (`AccountsId`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

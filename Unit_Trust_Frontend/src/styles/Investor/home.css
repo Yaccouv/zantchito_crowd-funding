@@ -1,0 +1,60 @@
+/* home.css */
+
+/* Overall container */
+.home-container {
+    background-color: #f8f2f8; /* Light background */
+    color: #5E2B97; /* Purple text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading styling */
+.home-container h2 {
+    color: #5E2B97; /* Purple color */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+button {
+    background-color: #5E2B97; /* Purple button */
+    color: white; /* White text on buttons */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #9B59B6; /* Lighter purple on hover */
+}
+
+/* Link inside buttons */
+button a {
+    color: white; /* Link text color is white */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Link hover effect */
+button a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Optional: Add pinkish accent to page */
+.home-container button {
+    background-color: #FF4C7F; /* Pinkish color */
+}
+
+.home-container button:hover {
+    background-color: #FF3B6F; /* Darker pinkish hover effect */
+}

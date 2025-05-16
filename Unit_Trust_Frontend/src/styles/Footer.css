@@ -1,0 +1,17 @@
+/* src/styles/Footer.css */
+
+.footer {
+    color: white;              /* Set text color */
+    font-size: 16px;           /* Increase font size for better readability */
+    padding: 20px;             /* Add padding for spacing */
+    text-align: left;          /* Align text to the left */
+    padding-left: 20px;        /* Additional padding to push content from the left */
+    position: fixed;           /* Fix the position of the footer */
+    bottom: 0;                 /* Position it at the bottom of the page */
+    width: 100%;               /* Make the footer span the entire width */
+    left: 0;                   /* Align the footer to the left side */
+    
+    letter-spacing: 0.5px;     /* Slightly space out the letters for readability */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add shadow to text for better visibility */
+  }
+  

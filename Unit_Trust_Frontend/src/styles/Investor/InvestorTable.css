@@ -1,0 +1,132 @@
+/* Container to center the table and provide some padding */
+.investment-table-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styles */
+  .investment-table-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the table */
+  .investment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .investment-table th,
+  .investment-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  /* Alternating row colors for better readability */
+  .investment-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .investment-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Table header styles */
+  .investment-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Add some space around the content */
+  .investment-table td {
+    font-family: Arial, sans-serif;
+  }
+
+  .addApp {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 20%;
+    transition: background-color 0.3s ease;
+  }
+  .addApp a {
+    text-decoration: none;
+    color: inherit;
+}
+
+  /* Button hover effect */
+  .addApp:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add a responsive rule for smaller screens */
+  @media (max-width: 768px) {
+    .investment-table-container {
+      padding: 10px;
+    }
+  
+    .investment-table th, .investment-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  /* Container for the action buttons (Deposit, Withdraw links) */
+  .action-btn {
+    display: flex;
+    flex-direction: column; /* Stack the links vertically */
+    gap: 10px; /* Add space between the links */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styling the individual links (Deposit, Withdraw) */
+  .action-link {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    padding: 10px 20px;
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center;
+    display: inline-block;
+    width: 120px; /* Set a fixed width for consistency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover effect for the links */
+  .action-link:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.05); /* Slightly enlarge the link */
+  }
+  
+  /* Optional: Styling for the links when focused (accessibility) */
+  .action-link:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px #ffbb33; /* Add a focus border */
+  }
+  
+  /* Optional: Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .action-link {
+      width: 100px; /* Adjust width for smaller screens */
+      padding: 8px 16px;
+    }
+  }
+  

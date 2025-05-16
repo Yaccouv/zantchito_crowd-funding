@@ -1,0 +1,157 @@
+/* The Modal Overlay (background) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure it's above other content */
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Box */
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%; /* To make it responsive */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 80vh; /* Set a maximum height for the modal */
+  overflow-y: auto; /* Make the content scrollable if it exceeds the height */
+}
+
+/* Title Styling */
+.modal h2 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Form Group Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label Styling */
+.form-group label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Input/Detail Styling */
+.form-group p {
+  font-size: 16px;
+  color: #555;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* Button Styling */
+button {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Animation for modal fade-in */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Animation for modal slide-in */
+@keyframes slideIn {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+
+.applicant-table-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading styles for applicant table */
+  .applicant-table-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the applicant table */
+  .applicant-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .applicant-table th,
+  .applicant-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  /* Alternating row colors for better readability */
+  .applicant-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .applicant-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Table header styles */
+  .applicant-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .applicant-table-container {
+      padding: 10px;
+    }
+  
+    .applicant-table th,
+    .applicant-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  

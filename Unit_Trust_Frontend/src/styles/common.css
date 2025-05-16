@@ -1,0 +1,726 @@
+/* =======================
+    Global Styles
+======================= */
+body {
+    background-color: #f8f2f8;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+
+input, button {
+    font-family: inherit;
+}
+
+/* =======================
+    Forms (Global)
+======================= */
+.business {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #5E2B97;
+    box-shadow: 0 0 5px rgba(94, 43, 151, 0.3);
+}
+
+button, .submit-button {
+    background-color: #FF4C7F;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .submit-button:hover {
+    background-color: #FF3B6F;
+}
+
+button a, .addApp a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button a:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+    Home Page
+======================= */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* =======================
+    SignIn and SignUp Forms
+======================= */
+.login-form, .register-form {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(94, 43, 151, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.register-form {
+    max-width: 600px;
+    background-color: #f9f9f9;
+}
+
+.login-form h2, .register-form h2 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #5E2B97;
+}
+
+.form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.form-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #5E2B97;
+}
+
+.form-links a {
+    color: #5E2B97;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form-links a:hover {
+    color: #9B59B6;
+}
+
+/* =======================
+    Dashboard Layout
+======================= */
+/* Add to your CSS file */
+/* Modal Overlay: This will cover the entire screen */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);  /* Dark semi-transparent background */
+    display: flex;
+    justify-content: center;  /* Centers the modal horizontally */
+    align-items: center;  /* Centers the modal vertically */
+    z-index: 1000;  /* Ensures the modal overlay is above other content */
+  }
+  
+  /* Modal Container: This is the actual modal box */
+  .modal {
+    position: relative;  /* Ensures that absolutely positioned elements (like the close button) are relative to this */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;  /* Adjust modal width */
+    max-width: 600px;  /* Maximum width */
+    max-height: 80vh;  /* Limits the modal's height to 80% of viewport height */
+    overflow-y: auto;  /* Allows vertical scrolling if content is too large */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Adds some shadow for a better visual effect */
+  }
+  
+  /* Close Button: Positioned at the top-right of the modal */
+  .close-button {
+    position: absolute;
+    top: 15px;  /* Set a bit more space from the top */
+    right: 15px;  /* Set a bit more space from the right */
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    color: white;  /* White color for better visibility on dark background */
+    cursor: pointer;
+    z-index: 1050;  /* Makes sure the button is above the modal content */
+    transition: color 0.3s ease;  /* Smooth color transition on hover */
+  }
+  
+  /* Close button hover effect */
+  .close-button:hover {
+    color: red;  /* Change to red or another color when hovered */
+  }
+  
+  /* Form Group: Styles for each field inside the modal */
+  .form-group {
+    margin-bottom: 15px;  /* Adds space between each form field */
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-group p {
+    margin: 5px 0;
+    color: #333;  /* Darker color for the text */
+  }
+  
+  /* Button Group: Styles for the action buttons (Accept, Deny) */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Accept Button */
+  .accept-button {
+    background-color: green;  /* Green color for accept button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .accept-button:hover {
+    background-color: darkgreen;  /* Darker green on hover */
+  }
+  
+  /* Deny Button */
+  .deny-button {
+    background-color: red;  /* Red color for deny button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .deny-button:hover {
+    background-color: darkred;  /* Darker red on hover */
+  }
+  .report-container {
+    width: 100%;
+    max-width: 1200px; /* Maximum width of the report */
+    margin: 0 auto;
+    padding: 2rem;
+  }  
+  
+
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar li {
+    margin-bottom: 20px;
+}
+
+.sidebar a, .logout-button {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover, .logout-button:hover {
+    background-color: #34495e;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+/* =======================
+    Campaign List Cards
+======================= */
+.active-campaigns-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.campaign-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.campaign-card {
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.campaign-card:hover {
+    transform: scale(1.05);
+}
+
+.campaign-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.campaign-info {
+    padding: 16px;
+}
+
+.campaign-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.campaign-business-name {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 16px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 4px;
+}
+
+.funding-info {
+    font-size: 14px;
+    color: #333;
+}
+
+.funds-raised,
+.funding-goal,
+.progress-percentage {
+    margin: 4px 0;
+}
+
+/* =======================
+    Campaign Details View
+======================= */
+.message {
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .amount-input {
+    width: 100%; /* Makes the input span the entire width of its parent container */
+    max-width: 300px; /* Limiting max-width for better control */
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition on focus */
+  }
+  
+  .amount-input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Subtle blue glow */
+  }
+  
+  .amount-input::placeholder {
+    color: #888; /* Lighter color for placeholder text */
+    font-style: italic; /* Italic style for placeholder text */
+  }
+  
+  /* New Modal Overlay */
+.payment-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* New Modal Content with Scroll */
+  .payment-modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-height: 80vh; /* Max height set to 80% of the viewport height */
+    overflow-y: auto;  /* Enable vertical scroll if content exceeds max height */
+  }
+  
+  /* Close Button */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  /* Style the Stripe Checkout Form */
+  .payment-stripe-checkout-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Adjust iframe styling if needed */
+  .payment-stripe-checkout-container iframe {
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+  }
+  
+
+
+.campaign-details {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.campaign-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+  
+
+.campaign-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.campaign-description h2 {
+    color: #5E2B97;
+    margin-bottom: 10px;
+}
+
+.progress-info {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.progress-bar-wrapper {
+    width: 100%;
+    background-color: #eee;
+    height: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.donate-button,
+.share-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.donate-button {
+    background-color: #FF4C7F;
+    color: white;
+}
+
+.share-button {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+.donate-button:hover {
+    background-color: #ff3b6f;
+}
+
+.share-button:hover {
+    background-color: #5E2B97;
+}
+
+.followers-list,
+.funders-list,
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 15px;
+}
+
+.follower-item,
+.funder-item,
+.comment-item {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.follower-item img,
+.funder-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* =======================
+    Tables
+======================= */
+.investment-table-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.investment-table-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.investment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.investment-table th,
+.investment-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.investment-table th {
+    background-color: #5E2B97;
+    color: white;
+    text-transform: uppercase;
+}
+
+.investment-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.investment-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* =======================
+    Action Buttons
+======================= */
+.addApp {
+    background-color: #5E2B97;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 20%;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.addApp:hover {
+    background-color: #45a049;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-link {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.action-link:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.action-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffbb33;
+}
+
+/* =======================
+    Responsive Design
+======================= */
+@media (max-width: 768px) {
+    .investment-table-container {
+        padding: 10px;
+    }
+
+    .investment-table th, .investment-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .action-link {
+        width: 100px;
+        padding: 8px 16px;
+    }
+
+    .campaign-header {
+        flex-direction: column;
+    }
+
+    .donate-button, .share-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .login-form, .register-form {
+        padding: 30px 20px;
+    }
+}

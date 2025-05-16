@@ -1,3 +1,24 @@
+# Zantchito Community Crowdfunding Platform
+
+## Technologies Used
+- **Frontend**: React
+- **Backend**: ASP.NET
+- **Database**: MySQL (via phpMyAdmin)
+- **Payment Integration**: Stripe
+- **Email Integration**: Gmail
+
+---
+
+## 1. Abstract
+
+This project aims to design and develop a mobile-based community crowdfunding platform that streamlines the process of funding entrepreneurial projects under the Zantchito initiative. The platform is intended to replace the current manual system, which involves in-person application submissions, paper-based documentation, and offline fund disbursement tracking. 
+
+Through this system, entrepreneurs will be able to digitally submit their business proposals and required documents, while investors can browse, fund, and track the progress of projects in real time. The platform integrates key functionalities such as automated eligibility screening, fund allocation calculations, payment processing via Stripe, real-time progress updates, email notifications, and direct chat communication between entrepreneurs and investors.
+
+This digital transformation enhances transparency, reduces administrative workload, and provides timely insights into project success based on funding progress. The report details the limitations of the existing system, functional requirements gathered, and the proposed system architecture designed to improve efficiency and accountability within the Zantchito program.
+
+
+
 ### Figure 1: Login Page  
 This page allows registered users to log in using their credentials.  
 ![Login Page](screenshots/figure1_login.jpg)
